@@ -244,7 +244,7 @@ var MapsLib = {
   },
   
   getList: function(whereClause) {
-  var selectColumns = "techname, Mobile, City";
+  var selectColumns = "techname, Mobile, City ";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
 },
 
