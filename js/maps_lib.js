@@ -37,8 +37,8 @@ var MapsLib = {
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
-  searchRadius:       8050,            //in meters ~ 1/2 mile
-  defaultZoom:        11,             //zoom level when map is loaded (bigger is more zoomed in)
+  //searchRadius:       8050,            //in meters ~ 1/2 mile
+  defaultZoom:        5,             //zoom level when map is loaded (bigger is more zoomed in)
   addrMarkerImage:    'images/blue-pushpin.png',
   currentPinpoint:    null,
 
@@ -105,19 +105,19 @@ var MapsLib = {
           map.setZoom(14);
           
           if (MapsLib.searchRadius == "144900")
-            map.setZoom(8);
-          else if (MapsLib.searchRadius == "96600")
             map.setZoom(9);
+          else if (MapsLib.searchRadius == "96600")
+            map.setZoom(10);
           else if (MapsLib.searchRadius == "72450")
-            map.setZoom(9.5);
+            map.setZoom(11);
           else if (MapsLib.searchRadius == "48300")
-            map.setZoom(9.5);
+            map.setZoom(11);
           else if (MapsLib.searchRadius == "32200")
-            map.setZoom(9.9);
+            map.setZoom(12);
           else if (MapsLib.searchRadius == "16100")
-            map.setZoom(10.8);
-          else if (MapsLib.searchRadius == "8050")
             map.setZoom(13);
+          else if (MapsLib.searchRadius == "8050")
+            map.setZoom(14);
           else
             map.setZoom(5);
 
