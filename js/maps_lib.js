@@ -33,12 +33,12 @@ var MapsLib = {
   locationColumn:     "techaddress",
 
   map_centroid:       new google.maps.LatLng(41.8781136, -87.66677856445312), //center that your map defaults to
-  locationScope:      "united states",      //geographical area appended to all address searches
+  //locationScope:      "united states",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
-  searchRadius:       805,            //in meters ~ 1/2 mile
-  defaultZoom:        6,             //zoom level when map is loaded (bigger is more zoomed in)
+  searchRadius:       8050,            //in meters ~ 1/2 mile
+  defaultZoom:        11,             //zoom level when map is loaded (bigger is more zoomed in)
   addrMarkerImage:    'images/blue-pushpin.png',
   currentPinpoint:    null,
 
