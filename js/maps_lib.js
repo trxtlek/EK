@@ -275,7 +275,7 @@ displayList: function(json) {
 
   if (data == null) {
     //clear results list
-    results.append("<li><span class='lead'>No results found</span></li>");
+    //results.append("<li><span class='lead'>No results found</span></li>");
   }
   else {
     for (var row in data) {
