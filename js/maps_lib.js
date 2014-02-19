@@ -105,13 +105,13 @@ var MapsLib = {
           map.setZoom(14);
           
           if (MapsLib.searchRadius == "144900")
-            map.setZoom(7);
+            map.setZoom(8);
           else if (MapsLib.searchRadius == "96600")
             map.setZoom(8);
           else if (MapsLib.searchRadius == "72450")
             map.setZoom(9);
           else if (MapsLib.searchRadius == "48300")
-            map.setZoom(10);
+            map.setZoom(9);
           else if (MapsLib.searchRadius == "32200")
             map.setZoom(10);
           else if (MapsLib.searchRadius == "16100")
