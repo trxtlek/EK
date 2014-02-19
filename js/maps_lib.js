@@ -294,19 +294,6 @@ displayList: function(json) {
   calculateCenter: function() {
     center = map.getCenter();
   },
-  
-  // rezoom map to radius
-  
-            if (MapsLib.searchRadius == "8050")
-            map.setZoom(12);
-          else if (MapsLib.searchRadius == "16100")
-            map.setZoom(11);
-          else if (MapsLib.searchRadius == "32200")
-            map.setZoom(10);
-          else if (MapsLib.searchRadius == "48300")
-            map.setZoom(9);
-          else
-            map.setZoom(5);
 
   //converts a slug or query string in to readable text
   convertToPlainString: function(text) {
