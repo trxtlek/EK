@@ -32,7 +32,7 @@ var MapsLib = {
   //example: locationColumn:     "'my location'",
   locationColumn:     "techaddress",
 
-  map_centroid:       new google.maps.LatLng(41.8781136, -87.66677856445312), //center that your map defaults to
+  map_centroid:       new google.maps.LatLng(39.50, -98.35), //center that your map defaults to
   //locationScope:      "united states",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
