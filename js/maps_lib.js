@@ -38,7 +38,7 @@ var MapsLib = {
   recordNamePlural:   "results",
 
   //searchRadius:       8050,            //in meters ~ 1/2 mile
-  defaultZoom:        3,             //zoom level when map is loaded (bigger is more zoomed in)
+  defaultZoom:        4,             //zoom level when map is loaded (bigger is more zoomed in)
   addrMarkerImage:    'images/blue-pushpin.png',
   currentPinpoint:    null,
 
