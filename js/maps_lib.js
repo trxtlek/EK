@@ -244,7 +244,7 @@ var MapsLib = {
   },
   
   getList: function(whereClause) {
-  var selectColumns = "Mobile, City ";
+  var selectColumns = "Tech_Name, Mobile, City";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
 },
 
@@ -268,7 +268,9 @@ displayList: function(json) {
             <strong>" + data[row][0] + "</strong>\
             <br />\
             " + data[row][1] + "\
-          </div>\
+            <br />\
+            " + data[row][2] + "\
+            </div>\
         </div>"
       results.append(template);
     }
