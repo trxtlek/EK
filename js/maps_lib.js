@@ -103,6 +103,15 @@ var MapsLib = {
           $.address.parameter('radius', encodeURIComponent(MapsLib.searchRadius));
           map.setCenter(MapsLib.currentPinpoint);
           map.setZoom(14);
+          
+          if (MapsLib.searchRadius == "144900")
+            map.setZoom(7);
+          else if (MapsLib.searchRadius == "96600")
+            map.setZoom(8);
+          else if (MapsLib.searchRadius == "8050")
+            map.setZoom(11);
+          else
+            map.setZoom(5);
 
           MapsLib.addrMarker = new google.maps.Marker({
             position: MapsLib.currentPinpoint,
