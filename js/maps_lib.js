@@ -261,39 +261,7 @@ var MapsLib = {
   },
   
   //Begin calculate distances function
-  
-  function calculateDistances() {
-    var service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix(
-      {
-        origins: ['address'],
-        destinations: ['whereClause'],
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
-      }, callback);
-}
-  
-  function callback(response, status) {
-    if (status != google.maps.DistanceMatrixStatus.OK) {
-      alert('Error was: ' + status);
-        } else {
-        var origins = response.originAddresses;
-        var destinations = response.destinationAddresses;
-        var outputDiv = document.getElementById('outputDiv');
-        outputDiv.innerHTML = '';
-        deleteOverlays();
-         
-        for (var i = 0; i < origins.length; i++) {
-          var results = response.rows[i].elements;
-          addMarker(origins[i], false);
-          for (var j = 0; j < results.length; j++) {
-            addMarker(destinations[j], true);
-            outputDiv.innerHTML += results[j].distance.text;
-        }
-      }
-    }
-}
+
   //End calculate distances function
   
   getList: function(whereClause) {
