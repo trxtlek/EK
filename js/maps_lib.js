@@ -205,10 +205,10 @@ var MapsLib = {
   drawSearchRadiusCircle: function(point) {
       var circleOptions = {
         strokeColor: "#4b58a6",
-        strokeOpacity: 0.4,
+        strokeOpacity: 0.8,
         strokeWeight: 1,
         fillColor: "#4b58a6",
-        fillOpacity: 0.06,
+        fillOpacity: 0.1,
         map: map,
         center: point,
         clickable: false,
