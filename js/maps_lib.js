@@ -74,6 +74,21 @@ var MapsLib = {
     
     //-----custom initializers-------
     
+    //-----end of custom initializers-------
+
+    //run the default search
+    MapsLib.doSearch();
+  },
+
+  doSearch: function(location) {
+    MapsLib.clearSearch();
+    var address = $("#search_address").val();
+    MapsLib.searchRadius = $("#search_radius").val();
+
+    var whereClause = MapsLib.locationColumn + " not equal to ''";
+
+    //-----custom filters-------
+    
     var type_column = "'NI'";
     var tempWhereClause = [];
     if ( $("#cbType1").is(':checked')) tempWhereClause.push("NI");
@@ -98,21 +113,6 @@ var MapsLib = {
     var tempWhereClause = [];
     if ( $("#cbType1").is(':checked')) tempWhereClause.push("'Operates Crew'");
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
-
-    //-----end of custom initializers-------
-
-    //run the default search
-    MapsLib.doSearch();
-  },
-
-  doSearch: function(location) {
-    MapsLib.clearSearch();
-    var address = $("#search_address").val();
-    MapsLib.searchRadius = $("#search_radius").val();
-
-    var whereClause = MapsLib.locationColumn + " not equal to ''";
-
-    //-----custom filters-------
 
     //-------end of custom filters--------
 
