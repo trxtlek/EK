@@ -115,7 +115,7 @@ var MapsLib = {
     //whereClause += " AND " + type_column1 + type_column2 + type_column3 + type_column4 + type_column5 +" IN ('" + tempWhereClause.join("','") + "')";
     
     if ( $("#NI").is(':checked')) {
-      whereClause += " AND NI = 1";
+      whereClause += " AND NI = NI";
       $.address.parameter('NI', "1");
     }
     else $.address.parameter('NI', '');
