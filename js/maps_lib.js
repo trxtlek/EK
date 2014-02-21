@@ -89,28 +89,32 @@ var MapsLib = {
 
     //-----custom filters-------
     
-    var type_column1 = "NI";
+    var type_column1 = "'NI'";
+    var type_column2 = "'Voice'";
+    var type_column3 = "'AV'";
+    var type_column4 = "'DMB'";
+    var type_column5 = "'Operates Crew'";
     var tempWhereClause = [];
     if ( $("#NI").is(':checked')) tempWhereClause.push("NI");
     //whereClause += " AND " + type_column1 + " IN ('" + tempWhereClause.join("','") + "')";
     
-    var type_column2 = "Voice";
-    var tempWhereClause = [];
+    //var type_column2 = "'Voice'";
+    //var tempWhereClause = [];
     if ( $("#Voice").is(':checked')) tempWhereClause.push("Voice");
     //whereClause += " AND " + type_column2 + " IN ('" + tempWhereClause.join("','") + "')";
     
-    var type_column3 = "AV";
-    var tempWhereClause = [];
+    //var type_column3 = "'AV'";
+    //var tempWhereClause = [];
     if ( $("#AV").is(':checked')) tempWhereClause.push("AV");
     //whereClause += " AND " + type_column3 + " IN ('" + tempWhereClause.join("','") + "')";
     
-    var type_column4 = "DMB";
-    var tempWhereClause = [];
+    //var type_column4 = "'DMB'";
+    //var tempWhereClause = [];
     if ( $("#DMB").is(':checked')) tempWhereClause.push("DMB");
     //whereClause += " AND " + type_column4 + " IN ('" + tempWhereClause.join("','") + "')";
     
-    var type_column5 = "'Operates Crew'";
-    var tempWhereClause = [];
+    //var type_column5 = "'Operates Crew'";
+    //var tempWhereClause = [];
     if ( $("#Operates Crew").is(':checked')) tempWhereClause.push("'Operates Crew'");
     whereClause += " AND " + type_column1 + type_column2 + type_column3 + type_column4 + type_column5 +" IN ('" + tempWhereClause.join("','") + "')";
 
