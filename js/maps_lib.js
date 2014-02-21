@@ -121,7 +121,7 @@ var MapsLib = {
     else $.address.parameter('NI', '');
 
     if ( $("#Voice").is(':checked')) {
-      whereClause += " AND Voice = 1";
+      whereClause += " AND Voice = Voice";
       $.address.parameter('Voice', "1");
     }
     else $.address.parameter('Voice', '');
