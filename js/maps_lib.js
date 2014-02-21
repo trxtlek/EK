@@ -94,10 +94,10 @@ var MapsLib = {
     if ( $("#NI").is(':checked')) tempaWhereClause.push("NI");
     whereClause += " AND " + type_column1 + " IN ('" + tempaWhereClause.join("','") + "')";
     
-    //var type_column2 = "'Voice'";
-    //var tempWhereClause = [];
-    //if ( $("#Voice").is(':checked')) tempWhereClause.push("Voice");
-    //whereClause += " AND " + type_column2 + " IN ('" + tempWhereClause.join("','") + "')";
+    var type_column2 = "'Voice'";
+    var tempbWhereClause = [];
+    if ( $("#Voice").is(':checked')) tempWhereClause.push("Voice");
+    whereClause += " AND " + type_column2 + " IN ('" + tempbWhereClause.join("','") + "')";
     
     //var type_column3 = "'AV'";
     //var tempWhereClause = [];
