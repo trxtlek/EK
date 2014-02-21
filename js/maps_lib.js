@@ -89,15 +89,15 @@ var MapsLib = {
 
     //-----custom filters-------
     
-    var type_column1 = "'NI'";
-    var tempaWhereClause = [];
-    if ( $("#NI").is(':checked')) tempaWhereClause.push("NI");
-    whereClause += " AND " + type_column1 + " IN ('" + tempaWhereClause.join("','") + "')";
+    //var type_column1 = "'NI'";
+    //var tempaWhereClause = [];
+    //if ( $("#NI").is(':checked')) tempaWhereClause.push("NI");
+    //whereClause += " AND " + type_column1 + " IN ('" + tempaWhereClause.join("','") + "')";
     
-    var type_column2 = "'Voice'";
-    var tempbWhereClause = [];
-    if ( $("#Voice").is(':checked')) tempbWhereClause.push("Voice");
-    whereClause += " AND " + type_column2 + " IN ('" + tempbWhereClause.join("','") + "')";
+    //var type_column2 = "'Voice'";
+    //var tempbWhereClause = [];
+    //if ( $("#Voice").is(':checked')) tempbWhereClause.push("Voice");
+    //whereClause += " AND " + type_column2 + " IN ('" + tempbWhereClause.join("','") + "')";
     
     //var type_column3 = "'AV'";
     //var tempWhereClause = [];
@@ -113,6 +113,24 @@ var MapsLib = {
     //var tempWhereClause = [];
     //if ( $("#Operates Crew").is(':checked')) tempWhereClause.push("'Operates Crew'");
     //whereClause += " AND " + type_column1 + type_column2 + type_column3 + type_column4 + type_column5 +" IN ('" + tempWhereClause.join("','") + "')";
+    
+    if ( $("#NI").is(':checked')) {
+      whereClause += " AND NI = 1";
+      $.address.parameter('NI', "1");
+    }
+    else $.address.parameter('NI', '');
+
+    if ( $("#Voice").is(':checked')) {
+      whereClause += " AND Voice = 1";
+      $.address.parameter('Voice', "1");
+    }
+    else $.address.parameter('Voice', '');
+
+    if ( $("#AV").is(':checked')) {
+      whereClause += " AND AV = 1";
+      $.address.parameter('AV', "1");
+    }
+    else $.address.parameter('AV', '');
 
     //-------end of custom filters--------
 
