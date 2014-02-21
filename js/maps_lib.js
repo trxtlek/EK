@@ -89,7 +89,11 @@ var MapsLib = {
 
     //-----custom filters-------
     
-    var type_column = "NI, Voice, AV, DMB, 'Operates Crew'";
+    var type_column1 = "NI";
+    var type_column2 = "Voice";
+    var type_column3 = "AV";
+    var type_column4 = "DMB";
+    var type_column5 = "'Operates Crew'";
     var tempWhereClause = [];
     if ( $("#NI").is(':checked')) tempWhereClause.push("NI");
     //whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
@@ -112,7 +116,7 @@ var MapsLib = {
     //var type_column = "'Operates Crew'";
     //var tempWhereClause = [];
     if ( $("#Operates Crew").is(':checked')) tempWhereClause.push("'Operates Crew'");
-    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
+    whereClause += " AND " + type_column1 + type_column2 + type_column3 + type_column4 + type_column5 + " IN ('" + tempWhereClause.join("','") + "')";
 
     //-------end of custom filters--------
 
