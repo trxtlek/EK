@@ -91,22 +91,22 @@ var MapsLib = {
     
     var type_column1 = "'ni'";
     var tempaWhereClause = [];
-    if ( $("#ni").is(':checked')) tempaWhereClause.push("ni"), "";
+    if ( $("#ni").is(':checked')) tempaWhereClause.push("ni") else $.address.parameter('ni', '');
     whereClause += " AND " + type_column1 + " IN ('" + tempaWhereClause.join("','") + "')";
     
     var type_column2 = "'voice'";
     var tempbWhereClause = [];
-    if ( $("#voice").is(':checked')) tempbWhereClause.push("voice"), "";
+    if ( $("#voice").is(':checked')) tempbWhereClause.push("voice") else $.address.parameter('voice', '');
     whereClause += " AND " + type_column2 + " IN ('" + tempbWhereClause.join("','") + "')";
     
     var type_column3 = "'av'";
     var tempcWhereClause = [];
-    if ( $("#av").is(':checked')) tempcWhereClause.push("av"), "";
+    if ( $("#av").is(':checked')) tempcWhereClause.push("av") else $.address.parameter('av', '');
     whereClause += " AND " + type_column3 + " IN ('" + tempcWhereClause.join("','") + "')";
     
     var type_column4 = "'dmb'";
     var tempdWhereClause = [];
-    if ( $("#dmb").is(':checked')) tempdWhereClause.push("dmb"), "";
+    if ( $("#dmb").is(':checked')) tempdWhereClause.push("dmb") else $.address.parameter('dmb', '');
     whereClause += " AND " + type_column4 + " IN ('" + tempdWhereClause.join("','") + "')";
     
 
