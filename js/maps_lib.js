@@ -96,7 +96,7 @@ var MapsLib = {
     
     var type_column2 = "'Voice'";
     var tempbWhereClause = [];
-    if ( $("#Voice").is(':checked')) tempWhereClause.push("Voice");
+    if ( $("#Voice").is(':checked')) tempbWhereClause.push("Voice");
     whereClause += " AND " + type_column2 + " IN ('" + tempbWhereClause.join("','") + "')";
     
     //var type_column3 = "'AV'";
