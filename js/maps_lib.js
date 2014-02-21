@@ -116,19 +116,19 @@ var MapsLib = {
     
     if ( $("#NI").is(':checked')) {
       whereClause += " AND NI = NI";
-      $.address.parameter('NI', "1");
+      $.address.parameter('NI', "NI");
     }
     else $.address.parameter('NI', '');
 
     if ( $("#Voice").is(':checked')) {
       whereClause += " AND Voice = Voice";
-      $.address.parameter('Voice', "1");
+      $.address.parameter('Voice', "Voice");
     }
     else $.address.parameter('Voice', '');
 
     if ( $("#AV").is(':checked')) {
-      whereClause += " AND AV = 1";
-      $.address.parameter('AV', "1");
+      whereClause += " AND AV = AV";
+      $.address.parameter('AV', "AV");
     }
     else $.address.parameter('AV', '');
 
