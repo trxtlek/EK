@@ -114,21 +114,21 @@ var MapsLib = {
     //if ( $("#Operates Crew").is(':checked')) tempWhereClause.push("'Operates Crew'");
     //whereClause += " AND " + type_column1 + type_column2 + type_column3 + type_column4 + type_column5 +" IN ('" + tempWhereClause.join("','") + "')";
     
-    if ( $("#NI").is(':checked')) {
-      whereClause += " AND NI = NI";
-      $.address.parameter('NI', "NI");
+    if ( $("#ni").is(':checked')) {
+      whereClause += " AND ni = ni";
+      $.address.parameter('ni', "1");
     }
     else $.address.parameter('NI', '');
 
-    if ( $("#Voice").is(':checked')) {
-      whereClause += " AND Voice = Voice";
-      $.address.parameter('Voice', "Voice");
+    if ( $("#voice").is(':checked')) {
+      whereClause += " AND voice = voice";
+      $.address.parameter('voice', "1");
     }
     else $.address.parameter('Voice', '');
 
-    if ( $("#AV").is(':checked')) {
-      whereClause += " AND AV = AV";
-      $.address.parameter('AV', "AV");
+    if ( $("#av").is(':checked')) {
+      whereClause += " AND av = av";
+      $.address.parameter('av', "1");
     }
     else $.address.parameter('AV', '');
 
