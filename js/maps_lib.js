@@ -172,6 +172,15 @@ var MapsLib = {
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
     MapsLib.getList(whereClause);
+        MapsLib.getDistanceMatrix(
+      {
+        origins: ['Los Angeles, California'],
+        destinations: ['Denver, Colorado'],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+      }, callback);
   },
 
   clearSearch: function() {
@@ -316,19 +325,6 @@ var MapsLib = {
   },
   
   //------end of results list-------
-  
-  function calculateDistances() {
-    MapsLib.getDistanceMatrix(
-      {
-        origins: ['Los Angeles'],
-        destinations: ['New York'],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
-      }, callback);
-  },
-
   
   function callback(response, status) {
   if (status != google.maps.DistanceMatrixStatus.OK) {
