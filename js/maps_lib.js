@@ -172,7 +172,9 @@ var MapsLib = {
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
     MapsLib.getList(whereClause);
-    
+  },
+  
+      
     //----testing distance
     
     MapsLib.getDistanceMatrix(
@@ -184,7 +186,6 @@ var MapsLib = {
         avoidHighways: false,
         avoidTolls: false
       }, callback);
-  },
   
   function callback(response, status) {
   if (status == google.maps.DistanceMatrixStatus.OK) {
