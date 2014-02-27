@@ -75,6 +75,15 @@ var MapsLib = {
     //-----custom initializers-------
     
     google.maps.DistanceMatrixService();
+      MapsLib.getDistanceMatrix(
+      {
+        origins: [address],
+        destinations: [whereClause],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+      }, callback);
 
     //-----end of custom initializers-------
 
@@ -172,15 +181,6 @@ var MapsLib = {
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
     MapsLib.getList(whereClause);
-        MapsLib.getDistanceMatrix(
-      {
-        origins: ['Los Angeles, California'],
-        destinations: ['Denver, Colorado'],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
-      }, callback);
   },
 
   clearSearch: function() {
@@ -280,6 +280,29 @@ var MapsLib = {
   },
   
   //Begin calculate distances function
+  
+  function callback(response, status) {
+  if (status != google.maps.DistanceMatrixStatus.OK) {
+    alert('Error was: ' + status);
+  } else {
+    var origins = response.originAddresses;
+    var destinations = response.destinationAddresses;
+    var outputDiv = document.getElementById('outputDiv');
+    outputDiv.innerHTML = '';
+    deleteOverlays();
+
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements;
+    //  addMarker(origins[i], false);
+      for (var j = 0; j < results.length; j++) {
+    //    addMarker(destinations[j], true);
+        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
+            + ': ' + results[j].distance.text + ' in '
+            + results[j].duration.text + '<br>';
+      }
+    }
+  }
+},
 
   //End calculate distances function
   
@@ -325,30 +348,7 @@ var MapsLib = {
   },
   
   //------end of results list-------
-  
-  function callback(response, status) {
-  if (status != google.maps.DistanceMatrixStatus.OK) {
-    alert('Error was: ' + status);
-  } else {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-    var outputDiv = document.getElementById('outputDiv');
-    outputDiv.innerHTML = '';
-    deleteOverlays();
 
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      addMarker(origins[i], false);
-      for (var j = 0; j < results.length; j++) {
-        addMarker(destinations[j], true);
-        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
-            + ': ' + results[j].distance.text + ' in '
-            + results[j].duration.text + '<br>';
-      }
-    }
-  }
-},
-  
   
   //-----
 
