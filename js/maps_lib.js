@@ -172,15 +172,6 @@ var MapsLib = {
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
     MapsLib.getList(whereClause);
-    MapsLib.getDistanceMatrix(
-    {
-      origins: ['address'],
-      destinations: ['whereClause'],
-      travelMode: google.maps.TravelMode.DRIVING,
-      unitSystem: google.maps.UnitSystem.IMPERIAL,
-      avoidHighways: false,
-      avoidTolls: false
-    }, callback);
   },
 
   clearSearch: function() {
