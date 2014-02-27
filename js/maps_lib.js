@@ -89,6 +89,14 @@ var MapsLib = {
 
     //-----custom filters-------
     
+    //-----text search----------
+    
+    var text_search = $("#text_search").val().replace("'", "\\'");
+    if (text_search != '')
+      whereClause += " AND 'skillsets' contains ignoring case '" + text_search + "'";
+      
+    //-----end of text search---
+    
     //var type_column1 = "'ni'";
     //var tempaWhereClause = [];
     //if ( $("#ni").is(':checked')) tempaWhereClause.push("ni");
