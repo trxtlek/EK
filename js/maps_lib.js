@@ -74,7 +74,7 @@ var MapsLib = {
     
     //-----custom initializers-------
     
-    google.maps.DistanceMatrixService();
+
 
     //-----end of custom initializers-------
 
