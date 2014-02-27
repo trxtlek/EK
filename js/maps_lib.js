@@ -320,8 +320,8 @@ var MapsLib = {
   function calculateDistances() {
     MapsLib.getDistanceMatrix(
       {
-        origins: ['address'],
-        destinations: ['whereClaus'],
+        origins: ['Los Angeles'],
+        destinations: ['New York'],
         travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.IMPERIAL,
         avoidHighways: false,
