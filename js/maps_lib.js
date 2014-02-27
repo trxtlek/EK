@@ -293,40 +293,48 @@ var MapsLib = {
 
   //End calculate distances function
   
+  //------results list-----
+  
   getList: function(whereClause) {
-  var selectColumns = "techname, Mobile, City ";
+  var selectColumns = "fixed_names, safe_mobile, city, zip, skillsets ";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
-},
-
-displayList: function(json) {
-  MapsLib.handleError(json);
-  var data = json["rows"];
-  var template = "";
-
-  var results = $("#results_list");
-  results.hide().empty(); //hide the existing list and empty it out first
-
-  if (data == null) {
-    //clear results list
-    //results.append("<li><span class='lead'>No results found</span></li>");
-  }
-  else {
-    for (var row in data) {
-      template = "\
-        <div class='row-fluid item-list'>\
-          <div class='span12'>\
-            <strong>" + data[row][0] + "</strong>\
-            <br />\
-            " + data[row][1] + "\
-            <br />\
-            " + data[row][2] + "\
-            </div>\
-        </div>"
-      results.append(template);
+  },
+  
+  displayList: function(json) {
+    MapsLib.handleError(json);
+    var data = json["rows"];
+    var template = "";
+  
+    var results = $("#results_list");
+    results.hide().empty(); //hide the existing list and empty it out first
+  
+    if (data == null) {
+      //clear results list
+      //results.append("<li><span class='lead'>No results found</span></li>");
     }
-  }
-  results.fadeIn();
-},
+    else {
+      for (var row in data) {
+        template = "\
+          <div class='row-fluid item-list'>\
+            <div class='span12'>\
+              <strong>" + data[row][0] + "</strong>\
+              <br />\
+              " + data[row][1] + "\
+              <br />\
+              " + data[row][2] + "\
+              <br />\
+              " + data[row][3] + "\
+              <br />\
+              " + data[row][4] + "\
+              </div>\
+          </div>"
+        results.append(template);
+      }
+    }
+    results.fadeIn();
+  },
+  
+  //------end of results list-------
 
   addCommas: function(nStr) {
     nStr += '';
