@@ -172,34 +172,40 @@ var MapsLib = {
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
     MapsLib.getList(whereClause);
-  },
-  
-      
+          
     //----testing distance
     
     MapsLib.getDistanceMatrix(
       {
         origins: [address],
-        destinations: [whereClause],
+        destinations: ['Denver, Colorado'],
         travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.IMPERIAL,
         avoidHighways: false,
         avoidTolls: false
       }, callback);
+  },
   
-  function callback(response, status) {
-  if (status == google.maps.DistanceMatrixStatus.OK) {
+
+  
+function callback(response, status) {
+  if (status != google.maps.DistanceMatrixStatus.OK) {
+    alert('Error was: ' + status);
+  } else {
     var origins = response.originAddresses;
     var destinations = response.destinationAddresses;
+    var outputDiv = document.getElementById('outputDiv');
+    outputDiv.innerHTML = '';
+    deleteOverlays();
 
     for (var i = 0; i < origins.length; i++) {
       var results = response.rows[i].elements;
+      addMarker(origins[i], false);
       for (var j = 0; j < results.length; j++) {
-        var element = results[j];
-        var distance = element.distance.text;
-        var duration = element.duration.text;
-        var from = origins[i];
-        var to = destinations[j];
+        addMarker(destinations[j], true);
+        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
+            + ': ' + results[j].distance.text + ' in '
+            + results[j].duration.text + '<br>';
       }
     }
   }
