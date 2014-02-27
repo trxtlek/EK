@@ -75,16 +75,7 @@ var MapsLib = {
     //-----custom initializers-------
     
     google.maps.DistanceMatrixService();
-    MapsLib.getDistanceMatrix(
-      {
-        origins: ['address'],
-        destinations: ['whereClause'],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
-      }, callback);
-    
+
     //-----end of custom initializers-------
 
     //run the default search
