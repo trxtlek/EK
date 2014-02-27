@@ -74,7 +74,30 @@ var MapsLib = {
     
     //-----custom initializers-------
     
+  queryPointDistances: function(whereClause) {
+  MapsLib.query("'city'", whereClause,"MapsLib.getPointDistances");
+},
 
+getPointDistances: function(json) {
+  MapsLib.handleError(json);
+  var data = json["rows"];
+
+  var destinations = [];
+  var service = new google.maps.DistanceMatrixService();
+  
+  for (var row in data) {
+    destinations[row] = new google.maps.LatLng(data[row][0], data[row][1]); // make a lat/long point
+  }
+
+  service.getDistanceMatrix(
+  {
+    origins: [MapsLib.currentPinpoint], // where we searched
+    destinations: destinations,
+    travelMode: google.maps.TravelMode.DRIVING,
+    avoidHighways: false,
+    avoidTolls: false
+  }, pointDistanceCallback);
+},
 
     //-----end of custom initializers-------
 
@@ -311,30 +334,7 @@ var MapsLib = {
   
   //------end of results list-------
   
-  queryPointDistances: function(whereClause) {
-  MapsLib.query("'city'", whereClause,"MapsLib.getPointDistances");
-},
 
-getPointDistances: function(json) {
-  MapsLib.handleError(json);
-  var data = json["rows"];
-
-  var destinations = [];
-  var service = new google.maps.DistanceMatrixService();
-  
-  for (var row in data) {
-    destinations[row] = new google.maps.LatLng(data[row][0], data[row][1]); // make a lat/long point
-  }
-
-  service.getDistanceMatrix(
-  {
-    origins: [MapsLib.currentPinpoint], // where we searched
-    destinations: destinations,
-    travelMode: google.maps.TravelMode.DRIVING,
-    avoidHighways: false,
-    avoidTolls: false
-  }, pointDistanceCallback);
-},
 
 pointDistanceCallback: function(response, status) {
   // See Parsing the Results for
