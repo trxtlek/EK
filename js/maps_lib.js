@@ -74,6 +74,17 @@ var MapsLib = {
     
     //-----custom initializers-------
     
+    google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [address],
+        destinations: [radius],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+      }, callback);
+    
     //-----end of custom initializers-------
 
     //run the default search
@@ -290,18 +301,7 @@ var MapsLib = {
   },
   
   //Begin calculate distances function
-  
-  var service = new google.maps.DistanceMatrixService();
-  service.getDistanceMatrix(
-    {
-      origins: [address],
-      destinations: [radius],
-      travelMode: google.maps.TravelMode.DRIVING,
-      unitSystem: google.maps.UnitSystem.METRIC,
-      avoidHighways: false,
-      avoidTolls: false
-    }, callback);
-    
+
     function callback(response, status) {
       if (status != google.maps.DistanceMatrixStatus.OK) {
         alert('Error was: ' + status);
