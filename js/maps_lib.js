@@ -316,6 +316,45 @@ var MapsLib = {
   },
   
   //------end of results list-------
+  
+  function calculateDistances() {
+    MapsLib.getDistanceMatrix(
+      {
+        origins: ['address'],
+        destinations: ['whereClaus'],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+      }, callback);
+  },
+
+  
+  function callback(response, status) {
+  if (status != google.maps.DistanceMatrixStatus.OK) {
+    alert('Error was: ' + status);
+  } else {
+    var origins = response.originAddresses;
+    var destinations = response.destinationAddresses;
+    var outputDiv = document.getElementById('outputDiv');
+    outputDiv.innerHTML = '';
+    deleteOverlays();
+
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements;
+      addMarker(origins[i], false);
+      for (var j = 0; j < results.length; j++) {
+        addMarker(destinations[j], true);
+        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
+            + ': ' + results[j].distance.text + ' in '
+            + results[j].duration.text + '<br>';
+      }
+    }
+  }
+},
+  
+  
+  //-----
 
   addCommas: function(nStr) {
     nStr += '';
