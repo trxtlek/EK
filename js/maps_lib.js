@@ -312,7 +312,7 @@ var MapsLib = {
   //------end of results list-------
   
   queryPointDistances: function(whereClause) {
-  MapsLib.query("'latitude', 'longitude'", whereClause,"MapsLib.getPointDistances");
+  MapsLib.query("'city'", whereClause,"MapsLib.getPointDistances");
 },
 
 getPointDistances: function(json) {
