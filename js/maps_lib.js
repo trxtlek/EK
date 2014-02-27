@@ -77,12 +77,12 @@ var MapsLib = {
     google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {
-        origins: [address],
-        destinations: [radius],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
+        //origins: [address],
+        //destinations: [radius],
+        //travelMode: google.maps.TravelMode.DRIVING,
+        //unitSystem: google.maps.UnitSystem.IMPERIAL,
+        //avoidHighways: false,
+        //avoidTolls: false
       }, callback);
     
     //-----end of custom initializers-------
