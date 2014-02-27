@@ -92,11 +92,9 @@ var MapsLib = {
     //-----custom filters-------
     
     //-----text search----------
-    
     var text_search = $("#text_search").val().replace("'", "\\'");
     if (text_search != '')
       whereClause += " AND 'skillsets' contains ignoring case '" + text_search + "'";
-      
     //-----end of text search---
     
     //-------end of custom filters--------
