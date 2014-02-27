@@ -175,15 +175,7 @@ var MapsLib = {
           
     //----testing distance
     
-    MapsLib.getDistanceMatrix(
-      {
-        origins: [address],
-        destinations: ['Denver, Colorado'],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
-      }, callback);
+    MapsLib.getDistanceMatrix(whereClause, callback);
   },
   
 
