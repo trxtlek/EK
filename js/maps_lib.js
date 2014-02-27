@@ -77,12 +77,12 @@ var MapsLib = {
     google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {
-        //origins: [address],
-        //destinations: [radius],
-        //travelMode: google.maps.TravelMode.DRIVING,
-        //unitSystem: google.maps.UnitSystem.IMPERIAL,
-        //avoidHighways: false,
-        //avoidTolls: false
+        origins: ['address'],
+        destinations: ['whereClause'],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
       }, callback);
     
     //-----end of custom initializers-------
@@ -108,27 +108,6 @@ var MapsLib = {
       
     //-----end of text search---
     
-    //var type_column1 = "'ni'";
-    //var tempaWhereClause = [];
-    //if ( $("#ni").is(':checked')) tempaWhereClause.push("ni");
-    //whereClause += " AND " + type_column1 + " IN ('" + tempaWhereClause.join("','") + "')";
-    
-    //var type_column2 = "'voice'";
-    //var tempbWhereClause = [];
-    //if ( $("#voice").is(':checked')) tempbWhereClause.push("voice");
-    //whereClause += " AND " + type_column2 + " IN ('" + tempbWhereClause.join("','") + "')";
-    
-    //var type_column3 = "'av'";
-    //var tempcWhereClause = [];
-    //if ( $("#av").is(':checked')) tempcWhereClause.push("av");
-    //whereClause += " AND " + type_column3 + " IN ('" + tempcWhereClause.join("','") + "')";
-    
-    //var type_column4 = "'dmb'";
-    //var tempdWhereClause = [];
-    //if ( $("#dmb").is(':checked')) tempdWhereClause.push("dmb");
-    //whereClause += " AND " + type_column4 + " IN ('" + tempdWhereClause.join("','") + "')";
-    
-
     //-------end of custom filters--------
 
     if (address != "") {
@@ -337,8 +316,6 @@ var MapsLib = {
               " + data[row][3] + "\
               <br />\
               " + data[row][4] + "\
-              <br />
-              <div id="outputDiv"></div>
               </div>\
           </div>"
         results.append(template);
