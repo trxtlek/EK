@@ -33,7 +33,7 @@ var MapsLib = {
   locationColumn:     "city/state/zip",
 
   map_centroid:       new google.maps.LatLng(39.50, -98.35), //center that your map defaults to
-  locationScope:      "Canada, United States",      //geographical area appended to all address searches
+  locationScope:      "Canada + United States",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
