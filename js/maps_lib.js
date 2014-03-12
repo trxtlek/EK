@@ -65,12 +65,12 @@ var MapsLib = {
     MapsLib.searchrecords = null;
 
     //reset filters
-    $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('address')));
+    $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('tech')));
     var loadRadius = MapsLib.convertToPlainString($.address.parameter('radius'));
     if (loadRadius != "") $("#search_radius").val(loadRadius);
     else $("#search_radius").val(MapsLib.searchRadius);
     $(":checkbox").prop("checked", "checked");
-    $("#result_box").hide("tech");
+    $("#result_box").hide();
     
     //-----custom initializers-------
     
