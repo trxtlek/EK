@@ -253,12 +253,7 @@ var MapsLib = {
     MapsLib.query(selectColumns, whereClause,"MapsLib.displaySearchCount");
   },
 
-  getList: function(whereClause) {
-    var selectColumns = "tech"
-    MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
-  },
-  
-  displaySearchCount: function(json) {
+    displaySearchCount: function(json) {
     MapsLib.handleError(json);
     var numRows = 0;
     if (json["rows"] != null)
@@ -276,7 +271,7 @@ var MapsLib = {
   //------results list-----
   
   getList: function(whereClause) {
-  var selectColumns = "fixed_names, safe_mobile, city, zip, skillsets ";
+  var selectColumns = "tech, state/city/zip ";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
   },
   
