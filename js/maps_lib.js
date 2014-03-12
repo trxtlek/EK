@@ -34,8 +34,8 @@ var MapsLib = {
 
   map_centroid:       new google.maps.LatLng(39.50, -98.35), //center that your map defaults to
   locationScope:      "",      //geographical area appended to all address searches
-  recordName:         "result",       //for showing number of results
-  recordNamePlural:   "results",
+  recordName:         "tech",       //for showing number of results
+  recordNamePlural:   "techs",
 
   //searchRadius:       8050,            //in meters ~ 1/2 mile
   defaultZoom:        4,             //zoom level when map is loaded (bigger is more zoomed in)
