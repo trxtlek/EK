@@ -70,7 +70,7 @@ var MapsLib = {
     if (loadRadius != "") $("#search_radius").val(loadRadius);
     else $("#search_radius").val(MapsLib.searchRadius);
     $(":checkbox").prop("checked", "checked");
-    $("#result_box").hide();
+    $("#result_box").hide("tech");
     
     //-----custom initializers-------
     
