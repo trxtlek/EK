@@ -65,7 +65,7 @@ var MapsLib = {
     MapsLib.searchrecords = null;
 
     //reset filters
-    $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('tech')));
+    $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('address')));
     var loadRadius = MapsLib.convertToPlainString($.address.parameter('radius'));
     if (loadRadius != "") $("#search_radius").val(loadRadius);
     else $("#search_radius").val(MapsLib.searchRadius);
@@ -103,7 +103,7 @@ var MapsLib = {
       if (address.toLowerCase().indexOf(MapsLib.locationScope) == -1)
         address = address + " " + MapsLib.locationScope;
 
-      geocoder.geocode( { 'address': address}, function(results, status) {
+      geocoder.geocode( { 'city/state/zip': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           MapsLib.currentPinpoint = results[0].geometry.location;
 
