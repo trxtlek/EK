@@ -103,7 +103,7 @@ var MapsLib = {
       if (address.toLowerCase().indexOf(MapsLib.locationScope) == -1)
         address = address + " " + MapsLib.locationScope;
 
-      geocoder.geocode( { 'city/state/zip': address}, function(results, status) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           MapsLib.currentPinpoint = results[0].geometry.location;
 
@@ -253,6 +253,11 @@ var MapsLib = {
     MapsLib.query(selectColumns, whereClause,"MapsLib.displaySearchCount");
   },
 
+  getList: function(whereClause) {
+    var selectColumns = "tech"
+    MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
+  },
+  
   displaySearchCount: function(json) {
     MapsLib.handleError(json);
     var numRows = 0;
