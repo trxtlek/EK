@@ -296,12 +296,6 @@ var MapsLib = {
               <br />\
               " + data[row][1] + "\
               <br />\
-              " + data[row][2] + "\
-              <br />\
-              " + data[row][3] + "\
-              <br />\
-              " + data[row][4] + "\
-              </div>\
           </div>"
         results.append(template);
       }
