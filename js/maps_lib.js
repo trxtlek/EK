@@ -271,7 +271,7 @@ var MapsLib = {
   //------results list-----
   
   getList: function(whereClause) {
-  var selectColumns = "tech, state_city_zip ";
+  var selectColumns = "tech";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
   },
   
