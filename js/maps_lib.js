@@ -34,8 +34,8 @@ var MapsLib = {
 
   map_centroid:       new google.maps.LatLng(39.50, -98.35), //center that your map defaults to
   locationScope:      "",      //geographical area appended to all address searches
-  recordName:         "tech",       //for showing number of results
-  recordNamePlural:   "techs",
+  recordName:         "Result",       //for showing number of results
+  recordNamePlural:   "Results",
 
   //searchRadius:       8050,            //in meters ~ 1/2 mile
   defaultZoom:        4,             //zoom level when map is loaded (bigger is more zoomed in)
@@ -271,7 +271,7 @@ var MapsLib = {
   //------results list-----
   
   getList: function(whereClause) {
-  var selectColumns = "tech,city_state_zip";
+  var selectColumns = "name,city_state_zip";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
   },
   
