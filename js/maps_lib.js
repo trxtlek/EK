@@ -272,7 +272,7 @@ var MapsLib = {
   
   getList: function(whereClause) {
   var selectColumns = "name,city_state_zip";
-  MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
+  MapsLib.query(selectColumns, whereClause, "MapsLib.displayList,Icon");
   },
   
   displayList: function(json) {
