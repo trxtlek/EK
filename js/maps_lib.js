@@ -249,7 +249,7 @@ var MapsLib = {
   },
 
   getCount: function(whereClause) {
-    var selectColumns = "Count(city_state_zip)";
+    var selectColumns = "Count(name,city_state_zip)";
     MapsLib.query(selectColumns, whereClause,"MapsLib.displaySearchCount");
   },
 
