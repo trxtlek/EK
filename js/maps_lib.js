@@ -271,7 +271,7 @@ var MapsLib = {
   //------results list-----
   
   getList: function(whereClause) {
-  var selectColumns = "name,city_state_zip";
+  var selectColumns = "city_state_zip";
   MapsLib.query(selectColumns, whereClause, "MapsLib.displayList,Icon");
   },
   
@@ -295,6 +295,10 @@ var MapsLib = {
               <strong>" + data[row][0] + "</strong>\
               <br />\
               " + data[row][1] + "\
+              <br />\
+              " + data[row][2] + "\
+              <br />\
+              " + data[row][3] + "\
               <br />\
           </div>"
         results.append(template);
