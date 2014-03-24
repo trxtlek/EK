@@ -92,8 +92,6 @@ var MapsLib = {
   
     directionsService.route(request, function(response, status) {
       if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-        distanceInput.value = response.routes[0].legs[0].distance.value / 1000;
       }
     });
 }
