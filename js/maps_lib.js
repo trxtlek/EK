@@ -94,8 +94,7 @@ var MapsLib = {
       if (status == google.maps.DirectionsStatus.OK) {
       }
     });
-}
-   <input type="submit" values='Calculate Route' onclick=:"calcRoute()" />
+  }
     //-----end of distance calculator-----
     //-----end of custom initializers-------
 
