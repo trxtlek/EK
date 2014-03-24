@@ -76,25 +76,7 @@ var MapsLib = {
     
     
     //-----distance calculator-------
-    var directionsService = new google.maps.DirectionsService();
- 
-    function calcRoute() {
-      var start = document.getElementById("start").value;
-      var end = document.getElementById("end").value;
   
-      var request = {
-        origin:start,
-        destination:end,
-        travelMode: google.maps.DirectionsTravelMode.DRIVING
-      
-      var distanceInput = document.getElementById("distance");  
-  };
-  
-    directionsService.route(request, function(response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-      }
-    });
-  }
     //-----end of distance calculator-----
     //-----end of custom initializers-------
 
