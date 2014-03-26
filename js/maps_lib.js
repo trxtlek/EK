@@ -251,7 +251,7 @@ var MapsLib = {
   },
 
   getCount: function(whereClause) {
-    var selectColumns = "Count(city_state_zip)";
+    var selectColumns = "Count()";
     MapsLib.query(selectColumns, whereClause,"MapsLib.displaySearchCount");
   },
 
